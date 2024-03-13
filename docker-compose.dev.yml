@@ -1,0 +1,41 @@
+version: "3.9"
+
+services:
+  cronjob-shedlock:
+    container_name: cronjob-shedlock-api
+    build:
+      dockerfile: Dockerfile
+      context: ./
+    ports:
+      - "6969:6969"
+    restart: unless-stopped
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      SPRING_PROFILES_ACTIVE: local
+      MYSQL_HOST: mysql
+      MYSQL_PORT: ${MYSQL_PORT}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+
+  mysql:
+    container_name: cronjob-shedlock-mysql
+    image: mysql:${MYSQL_VERSION}
+    ports:
+      - "${MYSQL_PORT}:3306"
+    restart: unless-stopped
+    volumes:
+      - mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_ALLOW_EMPTY_PASSWORD: "true"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 5
+
+volumes:
+  mysql-data:
+    driver: local

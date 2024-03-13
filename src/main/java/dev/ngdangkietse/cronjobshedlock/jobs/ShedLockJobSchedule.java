@@ -17,7 +17,6 @@ import java.time.Instant;
 @Slf4j
 public class ShedLockJobSchedule {
 
-
     @Scheduled(cron = "${shedlock.job.cron}")
     @SchedulerLock(
             name = "${shedlock.job.name}",
