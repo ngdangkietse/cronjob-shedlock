@@ -1,0 +1,11 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cronjob-shedlock-configmap
+data:
+  MYSQL_HOST: "ngdangkiet-mysql-cloud-database.a.aivencloud.com"
+  MYSQL_PORT: "20487"
+  MYSQL_USER: "ngdangkietse"
+  MYSQL_ROOT_PASSWORD: "AVNS_SM8z0UMn02qmFZpDMgX"
+  MYSQL_DATABASE: "cronjob_shedlock"
