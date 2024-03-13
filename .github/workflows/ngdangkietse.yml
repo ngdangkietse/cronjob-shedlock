@@ -35,11 +35,11 @@ jobs:
           MYSQL_USER_PROD: ${{ secrets.MYSQL_USER_PROD }}
           MYSQL_ROOT_PASSWORD_PROD: ${{ secrets.MYSQL_ROOT_PASSWORD_PROD }}
         run: |
-          echo "MYSQL_HOST_PROD=MYSQL_HOST_PROD" >> .env
-          echo "MYSQL_PORT_PROD=MYSQL_PORT_PROD" >> .env
-          echo "MYSQL_DATABASE_PROD=MYSQL_DATABASE_PROD" >> .env
-          echo "MYSQL_USER_PROD=MYSQL_USER_PROD" >> .env
-          echo "MYSQL_ROOT_PASSWORD_PROD=MYSQL_ROOT_PASSWORD_PROD" >> .env
+          echo "MYSQL_HOST_PROD=$MYSQL_HOST_PROD" >> .env
+          echo "MYSQL_PORT_PROD=$MYSQL_PORT_PROD" >> .env
+          echo "MYSQL_DATABASE_PROD=$MYSQL_DATABASE_PROD" >> .env
+          echo "MYSQL_USER_PROD=$MYSQL_USER_PROD" >> .env
+          echo "MYSQL_ROOT_PASSWORD_PROD=$MYSQL_ROOT_PASSWORD_PROD" >> .env
 
       - name: Build with Maven
         run: mvn clean install -Dmaven.test.skip=true
