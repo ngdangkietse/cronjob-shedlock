@@ -3,7 +3,7 @@ version: "3.9"
 services:
   cronjob-shedlock:
     container_name: cronjob-shedlock-api
-    image: 01092002/cronjob-shedlock:1.0.0
+    image: 01092002/cronjob-shedlock:latest
     ports:
       - "6969:6969"
     restart: unless-stopped

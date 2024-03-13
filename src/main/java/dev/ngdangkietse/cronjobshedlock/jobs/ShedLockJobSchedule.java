@@ -23,10 +23,13 @@ public class ShedLockJobSchedule {
             lockAtLeastFor = "${shedlock.job.lockAtLeastFor}",
             lockAtMostFor = "${shedlock.job.lockAtMostFor}")
     public void execute() throws InterruptedException {
-        log.info("Cron job is running");
         Instant start = Instant.now();
+        log.info("===================================================");
+        log.info("Start: {}", start);
         Thread.sleep(10000);
         Instant end = Instant.now();
-        log.info("Cron job is finished in {} ms", Duration.between(start, end).toSeconds());
+        log.info("End: {}", end);
+        log.info("Duration: {}", Duration.between(start, end));
+        log.info("===================================================");
     }
 }
