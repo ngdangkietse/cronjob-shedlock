@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: cronjob-shedlock
-          image: 01092002/cronjob-shedlock:1.0.0
+          image: 01092002/cronjob-shedlock:latest
           imagePullPolicy: IfNotPresent
           envFrom:
             - configMapRef:
