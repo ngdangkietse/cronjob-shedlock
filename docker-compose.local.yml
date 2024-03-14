@@ -15,10 +15,8 @@ services:
     environment:
       SPRING_PROFILES_ACTIVE: local
       MYSQL_HOST: mysql
-      MYSQL_PORT: ${MYSQL_PORT}
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    env_file:
+      - .env
 
   mysql:
     container_name: cronjob-shedlock-mysql
