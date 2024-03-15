@@ -12,3 +12,7 @@ local-down:
 	docker-compose -f docker-compose.local.yml down
 prod-down:
 	docker-compose -f docker-compose.prod.yml down
+monitoring-up:
+	cd infras/monitoring && docker-compose up -d
+monitoring-down:
+	cd infras/monitoring && docker-compose down
