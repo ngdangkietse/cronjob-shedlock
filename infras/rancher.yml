@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  rancher:
+    image: rancher/rancher:latest
+    container_name: cronjob-shedlock-rancher
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - rancher-data:/var/lib/rancher
+    privileged: true
+
+volumes:
+  rancher-data:
+    driver: local

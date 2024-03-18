@@ -1,0 +1,3 @@
+16:49:52.593 [main] INFO  d.n.c.CronjobShedlockApplication - Starting CronjobShedlockApplication using Java 18.0.2 with PID 1548 (C:\Users\kiet.nguyen-dang\projects\pet-projects\cronjob-shedlock\target\classes started by kiet.nguyen-dang in C:\Users\kiet.nguyen-dang\projects\pet-projects\cronjob-shedlock)
+16:49:52.596 [main] DEBUG d.n.c.CronjobShedlockApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+16:49:52.597 [main] INFO  d.n.c.CronjobShedlockApplication - The following 1 profile is active: "dev"
