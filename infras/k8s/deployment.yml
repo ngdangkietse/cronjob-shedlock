@@ -21,16 +21,18 @@ spec:
                 name: cronjob-shedlock-configmap
           ports:
             - containerPort: 6969
+              name: cronjob-port
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: cronjob-shedlock-service
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: cronjob-shedlock
   ports:
     - name: http
+      protocol: TCP
       port: 9090
-      targetPort: 6969
+      targetPort: cronjob-port
